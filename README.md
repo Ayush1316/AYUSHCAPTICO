@@ -29,3 +29,5 @@ password:123456
 But for user is one login only:
 email:admin@gmail.com
 password:123456
+
+and admin is made using for that by making role admin
