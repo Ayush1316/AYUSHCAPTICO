@@ -1,0 +1,43 @@
+<div class="lg:w-7/12 mt-6 p-4 shadow-lg mx-auto">
+    <h4 class="text-2xl text-center text-gray-800 font-semibold py-3"> hello admin!!</h4>
+    <div class="text-center flex justify-center">TO Upload Course <a href="" routerLink="/uploadcourse" class="text-cyan-500  pl-6 cursor-pointer">click upload</a></div>
+</div>
+<div class="lg:w-7/12 mt-6 p-4 pl-0 shadow-lg mx-auto">
+    <h4 class="text-2xl text-center text-gray-800 font-semibold py-3"> All your course</h4>
+    </div>
+    <div class="w-full divide-y mt-6 p-4 pl-0 shadow-lg ml-2">
+    <table class="w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Detail</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">File</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th> <!-- Updated: Added Actions column -->
+            </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+            <tr *ngFor="let course of courses">
+                <td class="px-6 py-4 whitespace-nowrap">{{ course._id }}</td>
+                <td class="px-6 py-4 whitespace-nowrap">{{ course.courseName }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-wrap">{{ course.courseDetail }}</td>
+                <td class="px-6 py-4 whitespace-nowrap">{{ course.coursePrice }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-wrap">{{ course.courseFile }}</td>
+                <!-- <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="text-sm">to download file</span>
+                    <a class="text-indigo-600 hover:text-indigo-900">Download</a>
+                </td> -->
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <button (click)="openUpdateModal(course)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Update
+                      </button>
+                    <button (click)="deleteCourse(course._id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+            <app-update-course-modal *ngIf="showUpdateModal" [updatedCourse]="selectedCourse" (closeModal)="showUpdateModal = false"></app-update-course-modal>
+        </tbody>
+    </table>
+</div>

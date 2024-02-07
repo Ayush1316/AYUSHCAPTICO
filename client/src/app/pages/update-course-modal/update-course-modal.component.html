@@ -1,0 +1,17 @@
+<div class="modal fixed w-full h-full top-0 left-0 flex items-center justify-center">
+  <div class="modal-content bg-white w-96 p-8 rounded shadow-lg relative">
+    <button class="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800" (click)="closeModal.emit()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+    </button>
+    <div class="modal-title text-2xl">PLease update course</div>
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+      <input type="text" formControlName="courseName" placeholder="Course Name" class="w-full border rounded px-3 py-2 mb-4">
+      <input type="text" formControlName="courseDetail" placeholder="Course Detail" class="w-full border rounded px-3 py-2 mb-4">
+      <input type="number" formControlName="coursePrice" placeholder="Course Price" class="w-full border rounded px-3 py-2 mb-4">
+      <span class="text-red-600">*you cannot update file if you want please delete and create again </span>
+      <button type="submit" [disabled]="updateForm.invalid" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Update</button>
+    </form>
+  </div>
+</div>

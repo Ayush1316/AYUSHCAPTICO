@@ -1,0 +1,40 @@
+<div class="lg:w-7/12 mt-10 p-4 shadow-lg mx-auto border-collapse  bg-sky-300 ">
+    <h4 class="text-xl text-center font-semibold py-3"> please uploaad</h4>
+    <form [formGroup]="myForm" class="flex flex-col ">
+        <div class="flex flex-col mt-4 mb-1">
+            <input type="text" name="" id="" class="p-2 border-x-slate-700   rounded " [ngClass]="{ 'is-invalid': f['courseName'].errors }" formControlName="courseName" placeholder="enter Course name">
+            @if(f['courseName'].errors && f['courseName'].touched){
+                <div class="text-red-600">coursename is required</div>
+            }
+        </div>
+        <div class="flex flex-col mt-4 mb-1">
+            <input type="text" name="" id="" class="p-2 rounded border-x-slate-700  " [ngClass]="{ 'is-invalid': f['courseDetail'].errors }" formControlName="courseDetail" placeholder="enter Course description in 2-3 lines">
+            @if(f['courseDetail'].errors && f['courseDetail'].touched){
+                <div class="text-red-600">coursename is required</div>
+            }
+        </div>
+        <!-- <div class="flex flex-col mt-4 mb-1">
+            <label for="image" class="block text-gray-700"> please enter course image</label>
+            <input type="image" name="" id=""  accept="image/*" class="p-2 border-gray-200 rounded " [ngClass]="{ 'is-invalid': f['courseImage'].errors }" formControlName="courseImage" placeholder="please enter the course image">
+            @if(f['courseImage'].errors && f['courseImage'].touched){
+                <div class="text-red-600">courseimage is required</div>
+            }
+        </div> -->
+        <div class="flex flex-col mt-4 mb-1">
+            <input type="number" name="" id="" class="p-2 border-x-slate-700   rounded " [ngClass]="{ 'is-invalid': f['coursePrice'].errors }" formControlName="coursePrice" placeholder="please enter the course price">
+            @if(f['coursePrice'].errors && f['coursePrice'].touched){
+                <div class="text-red-600">courseprice is required</div>
+            }
+        </div>
+        <div class="flex flex-col mt-4 mb-1">
+            <label for="file"  class="block text-gray-700"> please enter course pdf</label>
+            <input type="file" name="courseFile" id="courseFile" (change)="onFileSelected($event)" class="p-2 rounded" formControlName="courseFile" accept=".pdf">
+            <!-- <input type="file" name="courseFile" id="courseFile" (change)="onFileSelected($event)" class="p-2 rounded" formControlName="courseFile" accept=".pdf"> -->
+            @if(f['courseFile'].errors && f['courseFile'].touched){
+                <div class="text-red-600">pdf is required</div>
+            }
+        </div>
+
+        <button [disabled]="myForm.invalid" [class.disabled]="myForm.invalid" (click)="register()" class="bg-blue-500 rounded-md w-20 p-2 justify-center mt-3">submit</button>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<nav class="w-full flex flex-col sticky lg:flex-row  top-0 justify-between items-center p-5 bg-purple-400 shadow-xl">
+    <div class="logo lg:mb-0 mb-4">
+        <span class="text-gray-200 text-4xl flex justify-start items-center">Course me</span>
+    </div>
+
+    <div class="search relative lg:w-auto w-full lg:ml-0 ml-auto">
+        <span class="absolute mt-1.5 mx-3"><i class="fa fa-search" aria-hidden="true"></i></span>  
+        <input type="text" name="" placeholder="course finder" class="w-full lg:w-96 p-2 pl-9 rounded rounded-r-none text-yellow-950">
+        <button class="bg-slate-400 p-2 rounded-r text-white outline-none outline-0">Search</button>
+    </div>
+
+    <div class="nav-items flex lg:items-center lg:justify-end">
+       <ng-container *ngIf="!isloggedin">
+        <span routerLink="/login" class="text-xl cursor-pointer text-black m-3 hover:text-indigo-50 hover:underline">Login</span>
+        <span routerLink="/register"class="text-xl cursor-pointer text-black m-3 hover:text-indigo-50 hover:underline">Register</span>
+       </ng-container>
+        <ng-container *ngIf="isloggedin">
+            <span routerLink="/login" (click)="logout()" class="text-xl cursor-pointer text-black m-3 hover:text-indigo-50 hover:underline">Logout</span>
+        </ng-container>
+    </div>
+</nav>

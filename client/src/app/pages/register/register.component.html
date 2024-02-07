@@ -1,0 +1,43 @@
+<div class="lg:w-3/12 mt-10 p-6 shadow-lg mx-auto">
+    <h4 class="text-2xl text-center font-semibold py-3"> Register</h4>
+    <form [formGroup]="myForm" class="flex flex-col">
+        <div class="flex flex-col mt-4 mb-1">
+            <input type="text" name="" id="" class="p-2 border-gray-200 rounded " [ngClass]="{ 'is-invalid': f['firstname'].errors }" formControlName="firstname" placeholder="firstname">
+            @if(f['firstname'].errors && f['firstname'].touched){
+                <div class="text-red-600">firstname is required</div>
+            }
+        </div>
+        <div class="flex flex-col mt-4 mb-1">
+            <input type="text" name="" id="" class="p-2 border-gray-200 rounded "  formControlName="lastname" placeholder="lastname">
+            @if(f['lastname'].errors && f['lastname'].touched ){
+                <div class="text-red-600">lastname is required</div>
+            }
+        </div>
+        <div class="flex flex-col mt-4 mb-1">
+            <input type="text" name="" id="" class="p-2 border-gray-200 rounded "  formControlName="email" placeholder="email">
+            @if(f['email'].errors && f['email'].touched){
+                <div class="text-red-600">email is required</div>
+                @if (f['email'].errors['email']) {
+                    <div>Email is invalid</div>
+                    }
+            }
+        </div>
+        <div class="flex flex-col mt-4 mb-1">
+            <input type="text" name="" id="" class="p-2 border-gray-200 rounded "  formControlName="password" placeholder="password">
+            @if(f['password'].errors && f['password'].touched){
+                <div class="text-red-600">password is required above 6 characters</div>
+            } 
+        </div>
+        <div class="flex flex-col mt-4 mb-1">
+            <input type="text" name="" id="" class="p-2 border-gray-200 rounded "  formControlName="confirmpassword" placeholder="confirm password">
+            @if(f['confirmpassword'].errors &&  f['confirmpassword'].touched){
+                <div class="text-red-600">password is required above 6 characters</div>
+                @if (f['confirmpassword'].errors['matching']) {
+                    <div class="text-red-500">Confirm Password does not match</div>
+                    }
+            }
+        </div>
+        <button [disabled]="myForm.invalid" [class.disabled]="myForm.invalid" (click)="register()" class="bg-blue-500 rounded-md p-2 mt-3">submit</button>
+    </form>
+    <span >Already user?<a href="" routerLink="/login" class="text-cyan-500 mt-2 p-2cursor-pointer">Login</a></span>
+</div>

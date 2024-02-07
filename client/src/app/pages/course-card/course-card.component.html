@@ -1,0 +1,18 @@
+<div class="flex flex-wrap justify-center items-end sm:justify-start xl:justify-start">
+  <div class="flex font-sans bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md w-full sm:w-auto xl:ml-20 xl:border-l-2 max-w-sm m-4">
+    <div class="w-full md:w-48 relative">
+      <img [src]="course.courseImage" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+    </div>
+    <div class="flex-auto p-6">
+      <h4 class="text-lg font-semibold text-slate-900">{{ course._id}}</h4>
+      <h1 class="text-lg font-semibold text-slate-900">{{ course.courseName }}</h1>
+      <div class="text-lg font-semibold text-slate-500">Rs.{{ course.coursePrice }}</div>
+      <div class="w-full flex-none text-sm font-medium text-slate-700 mt-2">Desc:{{ course.courseDetail }}</div>
+      <button class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200 mt-2 md:mt-0" type="button" aria-label="Like">
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 19l.01-.01M19 12h.01M12 5l.01.01M14.828 9.172a4 4 0 015.656 5.656L12 21.656l-7.484-7.484a4 4 0 015.657-5.657L12 10.343l2.828-2.829zM12 5l-.01.01"/>
+        </svg>
+      </button>
+    </div>
+  </div>  
+</div>
