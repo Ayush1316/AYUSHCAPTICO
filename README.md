@@ -1,5 +1,5 @@
-# test
-AYUSHCAPTICO - MEAN Stack Project
+# AyushCaptico
+AyushCaptico - MEAN Stack Project
 Welcome to AYUSHCAPTICO! This project is a web application developed using the MEAN (MongoDB, Express.js, Angular, Node.js) stack. It aims to provide users with an intuitive platform for course management. Below you'll find a brief overview of the project's features, technologies used, installation instructions, and usage guidelines.
 
 Features
@@ -21,3 +21,11 @@ Course Exploration: Browse through the available courses and their details.
 Admin Actions: If you're an admin, manage courses by adding, deleting, updating, or viewing course details.
 File Upload: Admins can upload course files, ensuring secure storage in the uploads folder.
 And also they can update and delete.
+
+Note
+You can register  user but you can also use already register user for login
+email:practice@gmail.com
+password:123456
+But for user is one login only:
+email:admin@gmail.com
+password:123456
